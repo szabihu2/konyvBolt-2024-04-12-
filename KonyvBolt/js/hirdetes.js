@@ -1,6 +1,6 @@
-const form = document.querySelector('hirdetesForm'),
-continueBtn = form.querySelector('button input'),
-errorText = form.querySelector('.error-txt');
+const form = document.querySelector(".hirdetesForm form"),
+continueBtn = form.querySelector(".button input"),
+errorText = form.querySelector(".error-txt");
 
  form.onsubmit = (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ errorText = form.querySelector('.error-txt');
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
                 let data = xhr.response;
-                
+                console.log(data);
                 if(data == "success"){
                     location.href = "LoggedInMain.php"
                 }else{

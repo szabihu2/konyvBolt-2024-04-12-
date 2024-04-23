@@ -22,16 +22,13 @@ $sql = "SELECT * FROM felhasznalok where user_id = $user_id";
             ];
         } 
         //A mysqli_fetch_assoc() függvénnyel minden egyes rekordot egy asszociatív tömbként olvasunk ki,
-        //majd ezeket a tömböket egy $profil tömbbe gyűjtjük.
+        //majd ezeket a tömböket egy $vasarlas tömbbe gyűjtjük.
         else 
         {
-            $profil = [];
+            $vasarlas = [];
             while ($sor = mysqli_fetch_assoc($eredmeny)) {
-                $profil[] = [
-                    'fname' => $sor['fname'],
-                    'lname' => $sor['lname'],
+                $vasarlas[] = [
                     'email' => $sor['email'],
-                    'password' => $sor['password'],
                     'user_id' => $sor['user_id'],
                     
                 ];
@@ -39,7 +36,7 @@ $sql = "SELECT * FROM felhasznalok where user_id = $user_id";
             
             $response = [
                 'error' => false,
-                'profil' => $profil
+                'vasarlas' => $vasarlas
             ];
         }
         

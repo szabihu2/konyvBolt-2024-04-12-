@@ -1,4 +1,10 @@
 <?php
+
+if(!isset($_SESSION['user_id']))
+{
+    header("profil.php");
+}
+
 //ujKonyvek.php meghívása
 include_once('backend/ujKonyvek.php');
 
@@ -8,8 +14,7 @@ include_once('backend/legolcsobbKonyvek.php');
 //legtobbOldalSzam.php meghívása
 include_once('backend/legtobbOldalSzam.php');
 
-//mufajok.php meghívása
-include_once('backend/mufajok.php');
+
 
 ?><!DOCTYPE html>
 <html lang="hu">
@@ -20,8 +25,9 @@ include_once('backend/mufajok.php');
 
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="mufajokApp" ng-controller="mufajokCtrl">
 <!-- Oldal keret eleje -->
 <div id="templatemo_container">
     <!-- navigációs sáv eleje -->
@@ -55,7 +61,7 @@ include_once('backend/mufajok.php');
         <div id="templatemo_content_left">
         	<div class="templatemo_content_left_section">
             	<h1>Műfajok</h1>
-                <?php print $mufajok ?> 
+                <ul><li class="mufajok_szin" ng-repeat="mufaj in mufajok">{{ mufaj }}</li></ul>
             </div>
 			<div class="templatemo_content_left_section">
             	<h1>Legtöbb oldalú könyvek</h1>
@@ -65,7 +71,7 @@ include_once('backend/mufajok.php');
 
         <!-- Jobb oldali tartalom eleje -->
         
-        	<div id="profilTartalom"></div>
+        	<div id="vasarlasTartalom"></div>
               
          <!-- Bal oldali tartalom vége -->
     
@@ -81,8 +87,17 @@ include_once('backend/mufajok.php');
  <!-- Lábjegyzék vége --> 
 
 </div> <!-- Oldal keret vége -->
-<script src="js/profilAdat.js"></script>
-
+<script src="js/vasarlasAdat.js"></script>
+<script>let app = angular.module('mufajokApp', []);
+app.controller('mufajokCtrl', function ($scope, $http) {
+    // Műfajok lekérése
+    $http.get("http://localhost/KonyvBolt/backend/mufajok.php")
+        .then(function (response) {
+            $scope.mufajok = response.data;
+            console.log($scope.mufajok);
+        });
+})
+        </script>
 <!-- 
 Book Store Template 
 http://www.templatemo.com/preview/templatemo_086_book_store 

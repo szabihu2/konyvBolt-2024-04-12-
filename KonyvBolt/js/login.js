@@ -2,7 +2,7 @@ const form = document.querySelector(".login form"),
 continueBtn = form.querySelector(".button input"),
 errorText = form.querySelector(".error-txt");
 
-form.onclick = (e)=>{
+form.onsubmit = (e)=>{
     e.preventDefault();
 }
 
@@ -26,6 +26,9 @@ xhr.onload = ()=>{
 }
 //az adatokat el kell küldenünk az ajaxon keresztül a PHP-nek
 let formData = new FormData(form);
+    for (let pair of formData.entries()) {
+        console.log(pair[0] + ', ' + pair[1]);
+    }
 xhr.send(formData);
 }
 

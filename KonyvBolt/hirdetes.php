@@ -2,9 +2,10 @@
 
 <?php 
 session_start();
+//include_once('backend/kep.php');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +17,16 @@ session_start();
 <body>
     <!-- a form ot osszekötő keret -->
     <div class="wrapper">
+        
             <!-- fejléc -->
-            <Header>Hirdetés</Header>
+            <form class="form hirdetesForm" action="#" enctype="multipart/form-data" autocomplete="off" name="hirdetesForm" id="hirdetesForm" class="hirdetesForm">
+            <Header>
+                Hirdetés
+            </Header>
             <form action="#" enctype="multipart/form-data" autocomplete="off" name="hirdetesForm" id="hirdetesForm" class="hirdetesForm">
-            <div id="error-txt"></div>
+            <div id="error-txt">Hiba üzenet!</div>
                 <!-- beviteli mezők -->
                 <div class="name-details">
-
                         <div class="field input">
                         <label>Könyv Címe:</label>
                         <input type="text" placeholder="Cím" name="konyvCim" id="konyvCim" class="searchbar" required>
@@ -66,10 +70,10 @@ session_start();
                         
                         
 
-                        <!-- <input type="file" name="kep" id="submit" value="Kép" class="searchbar">
+                        <input type="file" name="kep" id="submit" value="Kép" class="searchbar">
                         <br>
                         <input type="submit" value="Fájl feltöltése" name="submit" id="submit">
-                         -->
+                         
                         
                         
                         <div class="field button">
@@ -81,7 +85,9 @@ session_start();
                         </div>
                 </div>
         </form>
+</form>
     </div>
+    
     <!-- hirdetes.js meghívása -->
     <script src="js/hirdetes.js"></script>
     

@@ -108,8 +108,8 @@ $sql = "SELECT konyv.*,mufajok.mufajNev FROM konyv LEFT JOIN mufajok ON konyv.mu
             ];
         }
         //Lapozó működésének tesztelése
-      /*  echo $honnan;
-        echo $lapozo;
+      //echo $honnan;
+        //echo $lapozo;
         $json = json_encode($response, JSON_PRETTY_PRINT);
-        echo($json);*/
+        echo($json);
 ?>

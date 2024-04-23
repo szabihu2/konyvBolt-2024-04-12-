@@ -9,6 +9,7 @@ if(isset($_SESSION['user_id']))
 ?>
 <!-- head.php betöltése -->
 <?php include_once "head.php"; ?>
+<head><title>Regisztráció</title></head>
 <body>
     <div class="wrapper">
         <section class="form signup">
@@ -16,7 +17,7 @@ if(isset($_SESSION['user_id']))
                 Regisztráció
             </header>
             <form action="#" enctype="multipart/form-data" autocomplete="off" name="registrationForm">
-                <div class="error-txt"></div>
+                <div class="error-txt">Hiba üzenet!</div>
                 <div class="name-details">
                     <div class="field input">
                         <label>Vezetéknév:</label>
@@ -30,15 +31,15 @@ if(isset($_SESSION['user_id']))
                 </div>
                     <div class="field input">
                         <label>E-mail:</label>
-                        <input type="email" name="email" placeholder="E-mail cím" name="email" id="" required>
+                        <input type="email" name="email" placeholder="E-mail cím"  id="" required>
                     </div>
                     <div class="field input">
                         <label>Jelszó:</label>
-                        <input type="password" name="password" placeholder="Jelszó" name="password" id="" required><i class="fas fa-eye"></i>
+                        <input type="password" name="password" placeholder="Jelszó"  id="" required><i class="fas fa-eye"></i>
                     </div>
                     <div class="field input">
                         <label>Jelszó megerősítése:</label>
-                        <input type="password" name="passwordagain" placeholder="Jelszó" name="passwordagain" id="" required><i class="fas fa-eye"></i>
+                        <input type="password" name="passwordagain" placeholder="Jelszó"  id="" required><i class="fas fa-eye"></i>
                     </div>
                     
                     <div class="field button">

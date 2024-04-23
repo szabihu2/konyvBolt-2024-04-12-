@@ -2,12 +2,12 @@
 session_start();
 include_once "config.php";
 
-$target_dir = "konyvKepek/";
+$target_dir = "Boritok/";
 $target_file = $target_dir . basename($_FILES["kep"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) 
+if(isset($_POST["submit"]))
 {
   $check = getimagesize($_FILES["kep"]["tmp_name"]);
   if($check !== false) 

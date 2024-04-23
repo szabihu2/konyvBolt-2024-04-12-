@@ -140,16 +140,70 @@ img {
 /* end of menu*/
 
 /* header */
-.reszletek {
+.reszletek  {
 	
-	text-align: center;
-	
+	clear: both !important;
+	text-align: center !important;
+	display: inline-block !important;
+	width: 100px !important;
+	padding: 4px 0 5px 0 !important;
+	margin-bottom: 20px !important;
+	margin-top: 20px !important; 
+	background-color: #cbc750 !important;
+	color: #000000 !important;
+	font-weight: bold !important;
+	text-decoration: none !important;
+}
 
+.lapozo
+{
+	text-align: center !important;
+	display: inline-block !important;
+	width: 100px !important;
+	padding: 4px 0 5px 0 !important;
+	margin-bottom: 10px !important; 
+	background-color: #e6e154;
+	color: #000000 !important;
+	font-weight: bold !important;
+	text-decoration: none !important;
+}
+
+.lapozo_div
+{
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.lapozo_margin
+{
+	margin-left: 10%
 }
 
 .leiras
 {
 	padding-left: 500px;
+}
+
+.mufajok_szin
+{
+	color: #fcf88e;
+}
+
+.profil 
+{
+	font-size: 15px !important;
+}
+
+.profil h2
+{
+	font-size: 25px !important;
+	margin-bottom: 5% !important;
+}
+
+.profil_margin
+{
+	margin-bottom: 20px;
 }
 
 #templatemo_header {
@@ -270,6 +324,8 @@ img {
 #kepPadding
 {
 	padding-bottom: 20px;
+	max-width: 40%;
+	max-height: 40%;
 }
 
 #legtobbOldal
@@ -278,7 +334,7 @@ img {
 }
 
 #templatemo_content_right .templatemo_product_box {
-	float: left;
+	display: flex;
 	width: 100%;
 	height: 100%;
 	padding: 10px;
@@ -286,7 +342,7 @@ img {
 	text-align: justify;
 }
 
-#templatemo_content_right h1 {
+h1 {
 	padding: 10px;
 	margin: 0 0 20px 0;
 	font-size: 15px;

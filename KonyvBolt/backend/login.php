@@ -22,7 +22,9 @@ if ($row) {
     } else {
         echo "Helytelen jelszót adott meg!";
     }
-} else {
+} 
+else 
+{
     // ha nincs ilyen felhasználó
     echo "Helytelen bejelentkezési adatok!";
 }

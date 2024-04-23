@@ -14,10 +14,13 @@ $mufaj = mysqli_real_escape_string($conn, $_POST['mufaj']);
 $ar = mysqli_real_escape_string($conn, $_POST['ar']);
 $leiras = mysqli_real_escape_string($conn, $_POST['leiras']);
 $konyvAllapot = mysqli_real_escape_string($conn, $_POST['konyvAllapot']);
+$kep = mysqli_real_escape_string($conn,$_POST['kep']);
 //A mysqli_query függvény segítségével végrehajtjuk az INSERT lekérdezést. Ez a sor fogja elvégezni az adatok mentését az adatbázisba.
 $sql1 = mysqli_query($conn, "INSERT INTO Konyv (konyvCim,kiadasDatum,oldalSzam,ar,leiras,konyvAllapot)
-Values('{$konyvCim}','{$kiadasDatum}','{$oldalSzam}','{$ar}'),'{$leiras}','{$konyvAllapot}' ");
+VALUES('{$konyvCim}','{$kiadasDatum}','{$oldalSzam}','{$ar}'),'{$leiras}','{$konyvAllapot}'");
 
-$sql2 mysqli_query($conn, "INSERT INTO szerzok (szerzoNev) VALUES ('{$szerzo}')");
+$sql2 = mysqli_query($conn, "INSERT INTO szerzok (szerzoNev) VALUES ('{$szerzo}')");
 
-$sql3 mysqli_query($conn, "INSERT INTO mufajok (mufajNev) VALUES ('{$mufaj}')");
+$sql3= mysqli_query($conn, "INSERT INTO mufajok (mufajNev) VALUES ('{$mufaj}')");
+
+$sql4 = mysqli_query($conn,"");

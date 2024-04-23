@@ -7,9 +7,6 @@ include_once('lapozo.php');
 include_once('mufajok.php');
 
         
-        // JSON kimenet generálása.
-        echo json_encode($response);
-       // $json = json_encode($response, JSON_PRETTY_PRINT);
-      //print_r($json);
+     
         
-
+echo json_encode($mufajok, JSON_UNESCAPED_UNICODE);

@@ -1,7 +1,7 @@
 <?php
 //Először elindítunk egy sessiont, ami lehetővé teszi az adatok átmeneti tárolását az egymást követő kérések között.
 session_start();
-//config.php betöltése.
+// a config.php betöltése.
 include_once "config.php";
 
 //Itt a $_POST tömbből kinyerjük az űrlapról érkező adatokat, és ezeket külön változókba mentjük el. 

@@ -9,22 +9,23 @@ if(isset($_SESSION['user_id']))
 ?>
 <!-- head.php betöltése -->
 <?php include_once "head.php"; ?>
+<head><title>Bejelentkezés</title></head>
 <body>
     <div class="wrapper">
         <section class="form login">
             <header>
                 Bejelentkezés
             </header>
-            <form action="#">
+            <form action="#" enctype="multipart/form-data" autocomplete="off" name="loginForm">
                 <div class="error-txt">Hiba üzenet!</div>
                 
                     <div class="field input">
                         <label>E-mail:</label>
-                        <input type="email" placeholder="E-mail cím" name="email" id="">
+                        <input type="email" placeholder="E-mail cím" name="email" id="email">
                     </div>
                     <div class="field input">
                         <label>Jelszó:</label>
-                        <input type="password" placeholder="Jelszó" name="password" id="">
+                        <input type="password" placeholder="Jelszó" name="password" id="password">
                         <i class="fas fa-eye"></i>
                     </div>
                     
